@@ -19,6 +19,8 @@ app.use((req, res, next) => {
   return next(Boom.notFound('This route does not exist.'));
 });
 
+
+
 app.use((err, req, res, next) => {
   console.log(err);
 

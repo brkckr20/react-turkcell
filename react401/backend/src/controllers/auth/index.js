@@ -13,6 +13,7 @@ import ValidationSchema from "./validations";
 import redis from "../../clients/redis";
 
 const Register = async (req, res, next) => {
+
 	const input = req.body;
 
 	const { error } = ValidationSchema.validate(input);
