@@ -8,6 +8,7 @@ import { QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
 
 import { AuthProvider } from './context/AuthContext';
+import { BasketProvider } from './context/BasketContext';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -22,9 +23,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
-        <ChakraProvider>
-          <App />
-        </ChakraProvider>
+        <BasketProvider>
+          <ChakraProvider>
+            <App />
+          </ChakraProvider>
+        </BasketProvider>
       </AuthProvider>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>

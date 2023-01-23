@@ -27,8 +27,19 @@ export const fetchRegister = async (input) => {
     const { data } = await axios.post(`http://localhost:4000/auth/register`, input);
     return data
 }
+export const fetchLogin = async (input) => {
+    const { data } = await axios.post(`http://localhost:4000/auth/login`, input);
+    return data
+}
 
 export const fetchMe = async () => {
     const { data } = await axios.get(`http://localhost:4000/auth/me`);
+    return data;
+}
+
+export const fetchLogout = async () => {
+    const { data } = await axios.post(`http://localhost:4000/auth/logout`, {
+        refresh_token: localStorage.getItem('refresh-token')
+    })
     return data;
 }
