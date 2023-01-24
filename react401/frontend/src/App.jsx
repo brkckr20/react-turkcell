@@ -7,6 +7,8 @@ import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
 import Profile from "./pages/auth/Profile";
 import ProtectedRoutes from "./pages/ProtectedRoutes";
+import Basket from "./pages/Basket";
+import Error404 from "./pages/Error404";
 function App() {
   return (
     <div>
@@ -17,7 +19,10 @@ function App() {
           <Route exact path="/product/:product_id" component={ProductDetail} />
           <Route path="/signin" component={SignIn} />
           <Route path="/signup" component={SignUp} />
+          <Route path="/basket" component={Basket} />
           <ProtectedRoutes path="/profile" component={Profile} />
+          <Route path="*" component={Error404} />
+
         </Switch>
       </div>
     </div>
