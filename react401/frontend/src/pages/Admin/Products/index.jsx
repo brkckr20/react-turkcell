@@ -1,7 +1,7 @@
 import React from 'react';
 import { useQuery } from 'react-query';
 import { fetchProductList } from '../../../api';
-import { Table } from 'antd';
+import { Table, Popconfirm } from 'antd';
 import { Link } from 'react-router-dom'
 
 const Products = () => {
@@ -36,6 +36,16 @@ const Products = () => {
             render: (text, record) => (
                 <>
                     <Link to={`/admin/products/${record._id}`}>Edit</Link>
+                    <Popconfirm
+                        title="Silinsin mi?"
+                        onConfirm={() => alert("silindi")}
+                        onCancel={() => console.log("iptal edild")}
+                        okText="Yes"
+                        cancelText="No"
+                        placement='left'
+                    >
+                        <a href="/#">Delete</a>
+                    </Popconfirm>
                 </>
             )
         }
