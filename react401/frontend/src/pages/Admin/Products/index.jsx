@@ -67,6 +67,7 @@ const Products = () => {
     return (
         <div>
             <p>Products</p>
+
             <Table dataSource={data} columns={columns} rowKey={"_id"}>Products</Table>
         </div>
     )
