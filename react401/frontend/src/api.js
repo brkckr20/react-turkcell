@@ -57,3 +57,8 @@ export const deleteProduct = async (id) => {
     const { data } = await axios.delete(`http://localhost:4000/product/${id}`);
     return data;
 }
+
+export const updateProduct = async (input, product_id) => {
+    const { data } = await axios.put(`http://localhost:4000/product/${product_id}`, input);
+    return data;
+}

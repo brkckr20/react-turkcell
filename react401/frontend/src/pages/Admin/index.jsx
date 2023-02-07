@@ -5,6 +5,7 @@ import AdminHome from './Home';
 import Orders from './Orders';
 import ProductDetail from './ProductDetail';
 import Products from './Products';
+import NewProduct from './Products/NewProduct';
 import styles from './styles.module.css';
 
 const Admin = () => {
@@ -29,7 +30,8 @@ const Admin = () => {
                     <Route exact path={path} component={AdminHome} />
                     <Route path={`${path}/orders`} component={Orders} />
                     <Route exact path={`${path}/products/:product_id`} component={ProductDetail} />
-                    <Route path={`${path}/products`} component={Products} />
+                    <Route exact path={`${path}/products/new`} component={NewProduct} />
+                    <Route exact path={`${path}/products`} component={Products} />
                 </Switch>
             </Box>
         </div>

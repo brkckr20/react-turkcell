@@ -3,6 +3,7 @@ import { useQuery, useMutation, useQueryClient } from 'react-query';
 import { fetchProductList, deleteProduct } from '../../../api';
 import { Table, Popconfirm } from 'antd';
 import { Link } from 'react-router-dom'
+import { Button } from '@chakra-ui/react';
 
 const Products = () => {
     const queryClient = useQueryClient();
@@ -67,7 +68,9 @@ const Products = () => {
     return (
         <div>
             <p>Products</p>
-
+            <Link to="/admin/products/new">
+                <Button>New</Button>
+            </Link>
             <Table dataSource={data} columns={columns} rowKey={"_id"}>Products</Table>
         </div>
     )
